@@ -1,0 +1,16 @@
+---  
+- hosts:  all
+  
+  tasks:
+  - name: obtem docker version
+    command: sh -l -c "docker version"
+    ignore_errors: yes
+    changed_when: false
+    register: docker_version
+  - name: print docker version
+    debug: msg={{ docker_version.stdout }}
+  - name: Jenkins
+    command: sh -l -c "docker run -d -p 8080:8080 -p 5000:5000 jenkins"
+    changed_when: false
+    register: Jenkins
+
