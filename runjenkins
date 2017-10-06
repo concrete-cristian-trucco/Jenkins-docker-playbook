@@ -1,7 +1,0 @@
----
-# These tasks install http and the php modules.
-
-- name: Install http and php etc
-
-- name: Criar o container do Jenkins
-
